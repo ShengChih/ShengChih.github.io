@@ -1,0 +1,117 @@
+#title in header
+title: "Hi PalaPalado."
+
+#main info
+#owner
+owner: "ShengChih"
+email: ms0529756@gmail.com
+info: "臺南人，居住在台灣的網站工程師 🇹🇼"
+#description
+desc: ""
+
+#menu
+menu:
+  Posts: /archives
+  About: /about
+
+#index/main page max show posts (in number)
+max_post: 4
+
+# Colors use hex color without #
+# Theme color
+tcolor: 0FA0CE
+
+# Define path to user css
+#(could be also located outside of theme)
+# Relative to source/ directory
+usercss: css/user.css
+
+# social profile at the footer/bottom
+footer: true
+github: https://github.com/ShengChih
+instagram: https://instagram.com/ms0529756
+
+# Misc
+nanobar: /js/nanobar.min.js
+switch_light: ☀️
+switch_dark: 🌑
+
+# Picture enlargement
+picjs: /js/pic.min.js
+
+# favicon
+favicon: /images/favicon.png
+# thumbnail
+thumbnail: /images/thumbnail.jpg
+
+article:
+  thumbnail: true
+
+# DISQUS comments (sign up to Disqus to get disqus_shortname)
+disqus_enabled: false
+disqus_shortname: https-shengchih-github-io
+
+# About resu,e
+resume:
+  name: Sammy, Chu
+  jobtitle: 資深工程師
+  contact:
+    - icon: fa-envelope
+      text: ms0529756@gmail.com
+    - icon: fa-globe
+      text: Blog
+      link: https://shengchih.github.io/
+    - icon: fa-github
+      text: Github
+      link: https://github.com/ShengChih
+  education:
+    - university: 國立臺灣師範大學 National Taiwan Normal University
+      duration: Sep 2013 - Aug 2015
+      location: Taipei, Taiwan
+      major: Computer Science & Information Engineering
+    - university: 國立高雄科技大學 National Kaohsiung University of Science and Technology
+      duration: Sep 2008 - Aug 2012
+      location: Kaohsiung, Taiwan
+      major: Computer Science & Information Engineering
+  skills:
+    - title: AWS Cloud Service
+      items: EC2, RDS, Apigateway, Lambda, S3, Cloudfont,...etc
+    - title: Programming language
+      items: Python, PHP, NodeJS
+    - title: Infrastructure
+      items: Docker
+    - title: Frameworks
+      items: Django, Codeigniter, ReactJS
+    - title: NoSQL / SQL
+      items: MongoDB, Redis, MySQL, PostgreSQL, SQLite
+  experience:
+    - title: 資深工程師
+      duration: Jul 2021 - Oct 2022
+      company: 伊雲谷數位科技股份有限公司 eCloudvalley Digital Technology Co., Ltd.
+      description: SCM 供應商管理鏈系統<br>OCR 系統整合<br>ESG 碳平台管理系統<br>
+    - title: 軟體工程師
+      duration: Aug 2019 - Mar 2021
+      company: 松果購物股份有限公司 Mobix Corporation, Inc.
+      description: 松果網站前後台系統開發
+    - title: 軟體工程師
+      duration: Sep 2015 - Apr 2019
+      company: 網擎資訊軟體股份有限公司 Openfind Information Technology, Inc.
+      description: 雲端儲存服務系統 SecuShare / ArkEasePro
+  projects:
+    - name: SCM 供應商管理鏈系統
+      description: 整合 SAP 系統<br>流程及出貨功能<br>發票及請款功能<br>
+      contribution: 主要貢獻者 / 維護者
+    - name: OCR 系統整合
+      description: AWS Infra 建置<br>認證系統
+      contribution: 主要維護者
+    - name: ESG 碳平台系統
+      description: AWS 服務建置<br>功能開發 (權限設計|碳係數|企業|工廠|碳排計算)
+      contribution: 主要貢獻者 / 維護者
+    - name: 松果前後台系統
+      description: 重構折扣功能<br>改善商品快取機制效能<br>爬蟲搬家工具<br>Feed 自動投放廣告效能<br>通知中心
+      contribution: 主要貢獻者 / 維護者
+    - name: Secushare Pro
+      description: 認證系統<br>協同工作<br>檔案分享
+      contribution: 主要貢獻者 / 維護者
+
+

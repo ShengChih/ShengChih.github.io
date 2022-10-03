@@ -1,0 +1,108 @@
+<div class="container">
+  <header>
+    <div class="name-wrapper">
+      <div id="fullname" class="title">
+        <%= theme.resume.name %>
+      </div>
+      <div id="jobtitle" class="sub-title">
+        <%= theme.resume.jobtitle %>
+      </div>
+    </div>
+    <div id="contact" class="contact">
+      <% for (item of theme.resume.contact) { %>
+      <div class="contact-item">
+        <% if (item.link) { %>
+        <a href="<%= item.link %>">
+        <% } %>
+        <i class="fa <%= item.icon %> aria-hidden="true></i> <%= item.text %>
+        <% if (item.link) { %>
+        </a>
+        <% } %>
+      </div>
+      <% } %>
+    </div>
+  </header>
+
+  <section id="experience">
+    <div class="section-title">
+      工作經驗
+    </div>
+    <div class="section-content">
+      <% for (exp of theme.resume.experience) { %>
+      <div class="block">
+        <div class="block-title">
+          <%= exp.title %>
+        </div>
+        <div class="block-subtitle">
+          <%= exp.duration %> | <%= exp.company %>
+        </div>
+        <div class="block-content">
+          <%- exp.description %>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-title">
+      技能
+    </div>
+    <div class="section-content">
+      <% for (skill of theme.resume.skills) { %>
+      <div class="block">
+        <div class="block-title">
+          <%= skill.title %>
+        </div>
+        <div class="block-content">
+          <%= skill.items %>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-title">
+      專案
+    </div>
+    <div class="section-content">
+      <% for (project of theme.resume.projects) { %>
+      <div class="block">
+        <div class="block-title">
+          <%= project.name %>
+        </div>
+        <div class="block-subtitle">
+          <%= project.contribution %>
+        </div>
+        <div class="block-content">
+          <%- project.description %>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </section>
+
+  
+
+  <section id="education">
+    <div class="section-title">
+      學歷
+    </div>
+    <div class="section-content">
+      <% for (edu of theme.resume.education) { %>
+      <div class="block">
+        <div class="block-title">
+          <%= edu.university %>
+        </div>
+        <div class="block-subtitle">
+          <%= edu.duration %> | <%= edu.location %>
+        </div>
+        <div class="block-content">
+          <%= edu.major %>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </section>
+</div>
