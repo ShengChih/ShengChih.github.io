@@ -1,5 +1,5 @@
 ---
-title: 回顧上週 Todo: 前端練功 (一)
+title: 回顧上週 Todo - 前端練功 (一)
 ---
 
 前端知識 overview 1 (非教學文 - RWD & BEM)

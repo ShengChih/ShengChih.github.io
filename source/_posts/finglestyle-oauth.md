@@ -1,5 +1,5 @@
 ---
-title: 回顧上週 Todo: FingerStyle OAuth2.0 整合 + DRF decorate apiview 練習
+title: 回顧上週 Todo - FingerStyle OAuth2.0 整合 + DRF decorate apiview 練習
 ---
 
 FingleStyle OAuth2.0 整合
