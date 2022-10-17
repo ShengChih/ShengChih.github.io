@@ -1,5 +1,5 @@
 ---
-title: 使用 cdk 整合 AWS 服務控制 EC2 開關機
+title: 使用 cdk 整合 AWS 服務控制 EC2 開關機 (非教學文)
 ---
 
 ## 流水文感想
