@@ -19,7 +19,7 @@ title: 回顧 2022.10.17 - 2022.10.22 Todo - 前端知識 (二)
 ```
 這個從來沒用過，在一些特殊的版型比 flex 更易用
 
-![](/images/20221021/grid_layout.png
+![](/images/20221021/grid_layout.png)
 [參考1](https://blog.hinablue.me/css-grid-layout/)
 [參考2](https://stackoverflow.com/questions/47601564/equal-width-columns-in-css-grid)
 
