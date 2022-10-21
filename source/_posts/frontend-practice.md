@@ -62,3 +62,17 @@ React component 有很多種，這些有什麼差異，什麼時候該用什麼
 e.g. JSXElement / ReactNode / FC component / React component ....
 ```
 我也有點問號？
+
+
+```
+取代 Css calc() 的用法
+```
+[stack overflow](https://stackoverflow.com/questions/16034397/css-calc-alternative)
+
+```
+使用 Pseudo Element :before :after ?  data-[key] & attr(key)
+```
+一開始我想用這個來做 container 左右兩個陰影區塊，然後想設定圖片上去，但後來我想因為我用了 css module 而不是用 styled-component
+我要怎麼 dynamic import image 到 :before :after 上的 background-image: url(`${imageUrl}`)
+HTML5 在 DOM 上可以添加 data-[key]，在 CSS 上可以用 background-image: url(attr(key)) 這樣的用法
+但我最後沒有試這個方案，所以未驗證，記錄一下。
