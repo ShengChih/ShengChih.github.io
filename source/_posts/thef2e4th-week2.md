@@ -38,3 +38,5 @@ web worker 我原本還想說是不是可以在做一個 worker pool 來管理 w
 
 嗯，也有看到一個酷酷的特效
 [整個畫面像素延遲的轉場](https://github.com/yulunyang/F2E_Week3_Scrum/blob/master/src/components/modules/Pixelated.vue)
+
+以上，報告完畢。
