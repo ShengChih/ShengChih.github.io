@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>回顧 2022.11.14 - 2022.11.18 - 點點簽</title>
+  
+  <link rel="canonical" href="https://shengchih.github.io/2022/11/25/thef2e4th-week2/">  
+  
+  <meta name="description" content="##瀑布文 TheF2E4th 第二週要實作一個簡易的電子簽核流程，設計稿一樣還是選擇 K.T 的設計稿，很常選他的原因是因為我也不知道我會做多久，而他的設計稿是可以透過 FB side project 社團詢問分享的，其他人的我就沒那麼有信心在活動後，還可以使用的。 一開始大概也是參考主辦給的資訊">
+  
+  
+  <meta name="keywords" content="blog">
+  
+  <meta name="author" content="PalaPalado">
+  
+  
+  
+  <meta property="og:site_name" content="Palapalado blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="回顧 2022.11.14 - 2022.11.18 - 點點簽" />
+  
+  <meta property="og:description" content="##瀑布文 TheF2E4th 第二週要實作一個簡易的電子簽核流程，設計稿一樣還是選擇 K.T 的設計稿，很常選他的原因是因為我也不知道我會做多久，而他的設計稿是可以透過 FB side project 社團詢問分享的，其他人的我就沒那麼有信心在活動後，還可以使用的。 一開始大概也是參考主辦給的資訊">
+  
+  <meta property="og:url" content="https://shengchih.github.io/2022/11/25/thef2e4th-week2/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="回顧 2022.11.14 - 2022.11.18 - 點點簽">
+  
+  <meta name="twitter:description" content="##瀑布文 TheF2E4th 第二週要實作一個簡易的電子簽核流程，設計稿一樣還是選擇 K.T 的設計稿，很常選他的原因是因為我也不知道我會做多久，而他的設計稿是可以透過 FB side project 社團詢問分享的，其他人的我就沒那麼有信心在活動後，還可以使用的。 一開始大概也是參考主辦給的資訊">
+  
+  
+  
+  
+  <meta name="twitter:url" content="https://shengchih.github.io/2022/11/25/thef2e4th-week2/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FA0CE;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FA0CE 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FA0CE;
+  }
+  .nanobar .bar {
+    background: #0FA0CE;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FA0CE;
+    border-color: #0FA0CE;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FA0CE;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  
+  <script src="/js/pic.min.js" defer></script>
+  
+
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="six columns ml-1">
+    <h1 class="mt-2">
+      Hi PalaPalado.
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/archives" class="ml">Posts</a>
+          
+        
+          
+          <a href="/about" class="ml">About</a>
+          
+        
+        
+          
+            <a href="mailto:ms0529756@gmail.com" target="_blank" class="ml">Email</a>
+          
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h2>回顧 2022.11.14 - 2022.11.18 - 點點簽</h2>
+
+  <p>##瀑布文</p>
+<p>TheF2E4th 第二週要實作一個簡易的電子簽核流程，設計稿一樣還是選擇 K.T 的設計稿，很常選他的原因是因為我也不知道我會做多久，而他的設計稿是可以透過 FB side project 社團詢問分享的，其他人的我就沒那麼有信心在活動後，還可以使用的。</p>
+<p>一開始大概也是參考主辦給的資訊，看看 sample code &amp; library 使用方式，看看哪些要銜接的地方要注意<br>但一開始做到 canvas 簽名就有個問題，做了第一個版本沒甚麼問題。<br>但後來看到有些文章在使用 web worker，所以我中間幾乎花 1-2 天在看 web worker 的使用，裡面牽扯了一些 worker 傳遞訊息時，直接傳遞圖片 or canvas 實例 or callback function 問題，應該使用 call by reference。</p>
+<p>因此研究了 OffscreenCanvas 來做 canvas reference，但 OffscreenCanvas 還算是一個實驗性的功能，不一定所有瀏覽器最新版本都被支援，就特別做了處理。處理就只是個判斷式也是還好，比較有問題的是 OffscreenCanvas 只能被 init 一次，這才是大問題，我原本特別寫了 useWorker 之類的 hook 來處理，但 React re-render 的問題，即使使用了 useRef &amp;useCallback &amp; memo 來避免 re-render，但還是免不了真正當值需要異動而造成的 re-render，後來覺得花了太多時間在 web worker 上怕比賽時間不足，就暫時先關了這功能回到最初版，這次就先大概了解就好了。</p>
+<p>web worker 我原本還想說是不是可以在做一個 worker pool 來管理 worker，但後來也發現個問題，那就是 worker 在完成後如何在被派發出去處理 onmessage 的事件，邏輯上都沒問題，在於 worker pool 這些 worker shared 狀態需要 mutex 來做 lock，我原本以為可以不用 XD，但後來想想好像避不開，就覺得這 worker pool 機制看起來能動，但大概是一個有問題的 worker pool，後來再研究看看就看到 actor model。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.techbridge.cc/2019/06/21/actor-model-in-web/">Actor model</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/36654401/do-web-workers-use-actor-model">Web worker &amp; Actor model</a></p>
+<p>嗯，我覺得是我的 useWorker 設計不對，要給 worker 處理的事情每次應該都不相關，而且可能也不需要用 worker pool 來管理 worker，可能應該改成每次要請 worker 做事都是實例化，處理完後就 release 這樣就沒有需要 mutex 的問題吧阿拉。</p>
+<p>但那樣要整個把 useWorker 實作重寫一遍，而且還是要處理 OffscreenCanvas 只能被 init 一次的問題(這應該只能每次都建立新的 canvas 並將舊的 canvas 資料寫到新的上，然後在 init 給 worker 處理)，但光是這些，其實我給 worker 的處理的東西，計算量也不大，而且 worker 間的傳輸也需要成本，我就有點用牛刀割雞了，最後我先 pass，繼續往後做了。</p>
+<p>往後做到 pdfjs 轉圖，再由 fabric.js 載入，將圖片 scale 後放到 container dpi 超低，即使能簽名，最後儲存檔案的結果幾乎看不到字，糊成一團，又花不少問題在查這問題。問題在於 pdfjs 轉圖時，輸入的 scale 參數就是決定圖片的解析程度，但你既不知道 pdf 原本是多少 dpi，所以只能對 scale 乘上幾倍來讓輸出圖好一點。</p>
+<p>但這會又造成另一個問題，就是從透過 fabric.js 將圖載入到 canvas 上，會有幾個問題，圖長寬很大，container 很小，這可以用 canvas width&#x2F;height 來設定 pixel 長寬，在透過呼叫 canvas context scale 縮小大圖，可以得到高 dpi 的圖片，這是我解完的第一個問題；第二個問題我就卡住了….，原因在於，fabric.js 每次透過 function 都會重新實例化新的 canvas 將舊的 canvas 編輯的 history 再重新 repaint 上去，可是我為了前面第一個問題對 fabric 內部的 canvas 做 scale 的操作，也都被 fabric.js 做了，因此後續插入的文字及圖片基本上都會被縮小 container&#x2F;image 的倍數，變得很小很小，操作移動事件都會使物件異常消失，看了 fabric source code 我也找不到任何可以透過 fabric api function 補救的點，所以只好 rollback 到糊糊的照片版本上了，這是我第二個花最久的時間。</p>
+<p>之後，就單純只是 RWD 的問題跟將簽名模組化，同時可支援 dialog &amp; page 顯示的問題。</p>
+<p>說到這裡，包含這個跟上周的視差滾動設計，其實我的 eslint &amp; prettier 其實都沒有打開，第三週的實作題目，我覺得內容比較少。另一方面，大概也要差不多來求職了，就不做第三週的題目，把 eslint &amp; prettier 弄好，兩週的題目 lint &amp; fix all 一遍，抓出 infinite loop re-render 的問題修正，TheF2E4th 暫告一段落。</p>
+<p>此外，我都會習慣去看一下別人的程式來內化成自己的 best practice，有發現一些比較喜歡的模仿對象，這兩週的程式其實都寫得蠻亂的，但我也有點懶得改，再寫新的就好了。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Howard86/f2e-2022">可模仿的對象</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ShengChih/TheF2E4th/tree/feature/dottedsign">第二週電子簽核實作</a></p>
+<p>嗯，也有看到一個酷酷的特效<br><a target="_blank" rel="noopener" href="https://github.com/yulunyang/F2E_Week3_Scrum/blob/master/src/components/modules/Pixelated.vue">整個畫面像素延遲的轉場</a></p>
+
+  <p> — 2022年11月25日</p>
+  
+
+
+        </div>
+        <div class="row mt-2">
+  <h3>Search</h3>
+  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
+  <div style="margin-top: 1.5rem;">
+    <ul id="result"></ul>
+  </div>
+</div>
+        <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with ❤ and
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/ShengChih" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://instagram.com/ms0529756" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Instagram">
+        <svg class="instagram svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+      </a>
+      
+
+      
+
+    </div>
+  
+</div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+  
+</body>
+
+</html>

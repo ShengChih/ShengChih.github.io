@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>回顧 2022.10.17 - 2022.10.22 Todo - 前端知識 (二)</title>
+  
+  <link rel="canonical" href="https://shengchih.github.io/2022/11/24/frontend-practice/">  
+  
+  <meta name="description" content="流水文這週還是在做台灣旅遊景點導覽，在切版時，還是有些會令自己需要卡頓的地方。也有把一些問題，收納到前次的問題裡 前端知識 (一) 1使用 flex 切版 這方式用了好幾次，但很常要用還是要查一下 1使用 Grid 切版 這個從來沒用過，在一些特殊的版型比 flex 更易用 參考1參考2 1在實作不">
+  
+  
+  <meta name="keywords" content="blog">
+  
+  <meta name="author" content="PalaPalado">
+  
+  
+  
+  <meta property="og:site_name" content="Palapalado blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="回顧 2022.10.17 - 2022.10.22 Todo - 前端知識 (二)" />
+  
+  <meta property="og:description" content="流水文這週還是在做台灣旅遊景點導覽，在切版時，還是有些會令自己需要卡頓的地方。也有把一些問題，收納到前次的問題裡 前端知識 (一) 1使用 flex 切版 這方式用了好幾次，但很常要用還是要查一下 1使用 Grid 切版 這個從來沒用過，在一些特殊的版型比 flex 更易用 參考1參考2 1在實作不">
+  
+  <meta property="og:url" content="https://shengchih.github.io/2022/11/24/frontend-practice/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="回顧 2022.10.17 - 2022.10.22 Todo - 前端知識 (二)">
+  
+  <meta name="twitter:description" content="流水文這週還是在做台灣旅遊景點導覽，在切版時，還是有些會令自己需要卡頓的地方。也有把一些問題，收納到前次的問題裡 前端知識 (一) 1使用 flex 切版 這方式用了好幾次，但很常要用還是要查一下 1使用 Grid 切版 這個從來沒用過，在一些特殊的版型比 flex 更易用 參考1參考2 1在實作不">
+  
+  
+  
+  
+  <meta name="twitter:url" content="https://shengchih.github.io/2022/11/24/frontend-practice/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FA0CE;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FA0CE 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FA0CE;
+  }
+  .nanobar .bar {
+    background: #0FA0CE;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FA0CE;
+    border-color: #0FA0CE;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FA0CE;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  
+  <script src="/js/pic.min.js" defer></script>
+  
+
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="six columns ml-1">
+    <h1 class="mt-2">
+      Hi PalaPalado.
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/archives" class="ml">Posts</a>
+          
+        
+          
+          <a href="/about" class="ml">About</a>
+          
+        
+        
+          
+            <a href="mailto:ms0529756@gmail.com" target="_blank" class="ml">Email</a>
+          
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h2>回顧 2022.10.17 - 2022.10.22 Todo - 前端知識 (二)</h2>
+
+  <h2 id="流水文"><a href="#流水文" class="headerlink" title="流水文"></a>流水文</h2><p>這週還是在做台灣旅遊景點導覽，在切版時，還是有些會令自己需要卡頓的地方。<br>也有把一些問題，收納到前次的問題裡</p>
+<p><a href="https://shengchih.github.io/2022/10/17/frontend-rwd/">前端知識 (一)</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用 flex 切版</span><br></pre></td></tr></table></figure>
+<p>這方式用了好幾次，但很常要用還是要查一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用 Grid 切版</span><br></pre></td></tr></table></figure>
+<p>這個從來沒用過，在一些特殊的版型比 flex 更易用</p>
+<p><img src="/images/20221021/grid_layout.png"><br><a target="_blank" rel="noopener" href="https://blog.hinablue.me/css-grid-layout/">參考1</a><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/47601564/equal-width-columns-in-css-grid">參考2</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在實作不同裝置上的 RWD 時，在 tablet | mobile `:hover` 不能正常使用</span><br></pre></td></tr></table></figure>
+<p>原本在實作一個 dropdown 的元件，滑鼠滑過後會有顏色變動，但在 tablet | mobile 常常是使用手指或筆去滑動螢幕，因此滑動到 DOM 身上，不能判別到底是滑動還是點擊，這裡我是使用 TouchEvent 實作來取代 <code>:hover</code> 的功能，監聽 onTouchStart &amp; onTouchMove Event 事件，來判斷滑進和滑出的 DOM 是不是同一個，再套用 styles。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ShengChih/Taiwan_Tourguide/blob/dev/src/hooks/useTouchDetector/index.ts">useTouchDetector 實作</a></p>
+<p>目前這個看似還能使用，但比如有兩個下拉式選單很近，且手指觸摸螢幕的接觸面積也不小，在重疊的地方做滑進滑出的判斷似乎會異常。</p>
+<p>這邊是在使用另一個下拉式選單， 透過 onBlur 來閉合另一個下拉式選單，產生不會重疊的地方。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EC2 Security Group 設定 &amp; 減少 Elastic IP 費用</span><br></pre></td></tr></table></figure>
+<p>由於我每天會開關自己的 ec2，申請 Elastic IP 也會因為佔用 IP 且未使用而計費，因此我的 ec2 的 elastic ip 也不用，就讓 ec2 開機後自動配置。</p>
+<p>所以我就在自己的 ec2 control api 新增 get instance ip 的 api。<br><a target="_blank" rel="noopener" href="https://github.com/ShengChih/aws-ec2-power-switcher/blob/dev/lambda_func/ec2_control/api.py#L316">取得 EC2 IP</a></p>
+<p>另外我家網路也是浮動 IP，中華小烏龜也很容易因為過熱重啟，我的 security group 開放 inbound cidr 常常也在開機後要重新調整。</p>
+<p>所以我就繼續 extend ec2 poweron api，開機後透過 API 傳入 ip 自動設定 security group。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ShengChih/aws-ec2-power-switcher/blob/dev/lambda_func/ec2_control/api.py#L243">設定 EC2 SG</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">關於 ReactJS HOC</span><br></pre></td></tr></table></figure>
+<p>在寫程式時，通常我自己會很關注別人怎麼寫這件事。我在寫台灣旅遊景點，就會想怎麼重用這些元件，或怎麼元件的 interface 才會好用，還有元件行為的 pattern，都有種既視感。</p>
+<p>目前在看一些 HOC 的 sample code，都是使用 class component，很少有那種 functional component 範例，這個就還要再看一下，看看能不能使用在專案上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">React component 有很多種，這些有什麼差異，什麼時候該用什麼</span><br><span class="line">e.g. JSXElement / ReactNode / FC component / React component ....</span><br></pre></td></tr></table></figure>
+<p>我也有點問號？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">取代 Css calc() 的用法</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/16034397/css-calc-alternative">stack overflow</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用 Pseudo Element :before :after ?  data-[key] &amp; attr(key)</span><br></pre></td></tr></table></figure>
+<p>一開始我想用這個來做 container 左右兩個陰影區塊，然後想設定圖片上去，但後來我想因為我用了 css module 而不是用 styled-component<br>我要怎麼 dynamic import image 到 :before :after 上的 background-image: url(<code>$&#123;imageUrl&#125;</code>)<br>HTML5 在 DOM 上可以添加 data-[key]，在 CSS 上可以用 background-image: url(attr(key)) 這樣的用法<br>但我最後沒有試這個方案，所以未驗證，記錄一下。</p>
+
+  <p> — 2022年11月24日</p>
+  
+
+
+        </div>
+        <div class="row mt-2">
+  <h3>Search</h3>
+  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
+  <div style="margin-top: 1.5rem;">
+    <ul id="result"></ul>
+  </div>
+</div>
+        <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with ❤ and
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/ShengChih" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://instagram.com/ms0529756" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Instagram">
+        <svg class="instagram svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+      </a>
+      
+
+      
+
+    </div>
+  
+</div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+  
+</body>
+
+</html>

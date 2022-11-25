@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>回顧2022.10.09 - 2022.10.15  Todo - 前端知識 (一)</title>
+  
+  <link rel="canonical" href="https://shengchih.github.io/2022/11/24/frontend-rwd/">  
+  
+  <meta name="description" content="流水文繼 fingerstyle OAuth2.0 實作完後，由於我過去經驗都是以後端工作居多，前端工作的比例很少，通常都是前端套件套一套，而待的公司都是企業的解決方案，不是面向客戶使用者的居多，所以對 UI&amp;#x2F;UX 或漂亮的前端無緣，對 RWD &amp;amp; AWD 的要求也不多，因此呢，前">
+  
+  
+  <meta name="keywords" content="blog">
+  
+  <meta name="author" content="PalaPalado">
+  
+  
+  
+  <meta property="og:site_name" content="Palapalado blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="回顧2022.10.09 - 2022.10.15  Todo - 前端知識 (一)" />
+  
+  <meta property="og:description" content="流水文繼 fingerstyle OAuth2.0 實作完後，由於我過去經驗都是以後端工作居多，前端工作的比例很少，通常都是前端套件套一套，而待的公司都是企業的解決方案，不是面向客戶使用者的居多，所以對 UI&amp;#x2F;UX 或漂亮的前端無緣，對 RWD &amp;amp; AWD 的要求也不多，因此呢，前">
+  
+  <meta property="og:url" content="https://shengchih.github.io/2022/11/24/frontend-rwd/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="回顧2022.10.09 - 2022.10.15  Todo - 前端知識 (一)">
+  
+  <meta name="twitter:description" content="流水文繼 fingerstyle OAuth2.0 實作完後，由於我過去經驗都是以後端工作居多，前端工作的比例很少，通常都是前端套件套一套，而待的公司都是企業的解決方案，不是面向客戶使用者的居多，所以對 UI&amp;#x2F;UX 或漂亮的前端無緣，對 RWD &amp;amp; AWD 的要求也不多，因此呢，前">
+  
+  
+  
+  
+  <meta name="twitter:url" content="https://shengchih.github.io/2022/11/24/frontend-rwd/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FA0CE;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FA0CE 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FA0CE;
+  }
+  .nanobar .bar {
+    background: #0FA0CE;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FA0CE;
+    border-color: #0FA0CE;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FA0CE;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  
+  <script src="/js/pic.min.js" defer></script>
+  
+
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="six columns ml-1">
+    <h1 class="mt-2">
+      Hi PalaPalado.
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/archives" class="ml">Posts</a>
+          
+        
+          
+          <a href="/about" class="ml">About</a>
+          
+        
+        
+          
+            <a href="mailto:ms0529756@gmail.com" target="_blank" class="ml">Email</a>
+          
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h2>回顧2022.10.09 - 2022.10.15  Todo - 前端知識 (一)</h2>
+
+  <h2 id="流水文"><a href="#流水文" class="headerlink" title="流水文"></a>流水文</h2><p>繼 fingerstyle OAuth2.0 實作完後，由於我過去經驗都是以後端工作居多，前端工作的比例很少，通常都是前端套件套一套，而待的公司都是企業的解決方案，不是面向客戶使用者的居多，所以對 UI&#x2F;UX 或漂亮的前端無緣，對 RWD &amp; AWD 的要求也不多，因此呢，前端我一直自認都是不處於那麼精熟，基礎不紮實，處理不需美工的畫面工作還堪用。</p>
+<p>由於今天 F2E 前端比賽要開始了，前幾屆我都是只收藏 or 聯絡設計師的設計作品，然後沒有時程的慢慢做，知識就也慢慢累積，但今年就比較有時間可以這樣瞎摸，就開始針對自己想精進的風向摸。</p>
+<p>嗯，我先從 Facebook 社群 side project，聯絡設計師 KT 的台灣旅遊網站，開始從設計稿慢慢做。<br>就有遇到一些對其他前端工程師沒問題，但我就很納悶的問題</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Q: 設計稿只出 mobile(360)/tablet(768)/pc(1280)</span><br></pre></td></tr></table></figure>
+<p>那我應該不可能就只針對 DOM 位置 &#x2F; 長寬高寫死 px 吧 ?<br>如果我的螢幕或裝置是 &gt;&gt; 1440 | 767 | 1279 | 359 這種落在常用斷點的邊際，奇怪的長寬，一直固定 px 應該很怪，因為之前待過一年多的電商，所以知道等比例縮放的解決方式，嗯，請選擇 rem | vw，設計圖要用 px to rem 或者 px to vw 的解決方式。</p>
+<p>但 px to rem 算是瀏覽器還不支援 vw 的過渡解決方案，現在都傾向 px to vw 。</p>
+<p>之前我待過的電商，那時是用 jQuery + (sass func | JS) 去轉 px 單位，然後我一開始用在專案裡面，也是採用類似的搭配 ReactJS + CSS in JS 方案去偵測螢幕裝置拿來轉 px 單位，但專案裡面我又有使用 TailwindCSS，因此我又有遇到新的問題。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Q: CSS 兩派之爭： 要不要使用 styled-component (CSS in JS)</span><br></pre></td></tr></table></figure>
+<p>嗯，兩派都有擁護者，嗯，不管，我傾向用 TailwindCSS 就是不想在 Component 寫一堆 CSS，而且我有意想知道 TailwindCSS 的使用方式，專案畫面的動態也沒有複雜要使用 CSS in JS，另外我不是很喜歡這樣混雜著寫，所以決定使用非 CSS in JS 的解決方案。隨著專案變大，維護者有進有出，程度跟想法都有差異，若團隊沒有設定命名方式，最後可能就比較難維護，因此我又遇到 CSS 命名規則問題 &amp; 避免無用的 CSS 產生，但我覺得這問題不管選哪種方案都會遇到…，需要可重用的樣式 &#x2F; 多餘的樣式等這些都是維護成本吧。</p>
+<p>[2022&#x2F;10&#x2F;21]<br>這邊後來還有一個 global scope 的問題，這邊通常會用 styled-component 或 css module 來處理，讓styles 在自己的 component 作用，不影響其他元件。</p>
+<p>BEM 命名規則，若按結構命名，很容易有嵌套巢狀的結構，這裡要適時打破結構，搭配 css module，就不會遇到 global scope 的問題。</p>
+<p>CSS modules 在寫可重用的元件，似乎沒有 styled-component 直接覆寫的方便。<br>例如元件引用了基礎的 css module，你從其他更高階的元件引入後，想覆寫他的 css，很常會愈到 css 權重來決定要不要套用 css，若無法你就只能寫 <code>!important</code> 或想辦法加上權重更高的 html attribute.</p>
+<p>要不然元件都需要在 props 多傳入 className | style，或繼承 ReactNode 這樣可以從外部丟入 class name 或使用 inline style。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Q: CSS 設計模式 &amp; 命名規則</span><br></pre></td></tr></table></figure>
+<p>嗯，開始參考 ~，由於專案只有我一個人在做，因此我覺得命名是多方嘗試且練習。</p>
+<p><a target="_blank" rel="noopener" href="https://linyencheng.github.io/2022/09/07/relationships-between-frontend-and-backend/css-design-pattern-with-bem-smacss-oocss-atomic-css/">CSS 設計模式 &amp; 命名規則</a><br><a target="_blank" rel="noopener" href="https://linyencheng.github.io/2022/09/09/relationships-between-frontend-and-backend/css-framework/">CSS 框架</a><br><a target="_blank" rel="noopener" href="https://linyencheng.github.io/2022/09/10/relationships-between-frontend-and-backend/css-in-js-with-reactjs/">CSS in JS 參考 1</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103522819">CSS in JS 參考 2</a><br><a target="_blank" rel="noopener" href="https://github.com/MicheleBertoli/css-in-js">CSS in JS 套件</a></p>
+<p>嗯，回到上面 px to vw 的解決方案，最後找了同為 postcss plugin (postcss-px-to-viewport) 的套件來使用，研究後我又遇到一個問題，它只能設定一個 config，若我有多個 device 設計稿，自動 px to vw 不能用錯設計稿的 base 轉 viewport</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Q: postcss-px-to-viewport 套件，根據不同裝置 config 去轉 px to vw</span><br></pre></td></tr></table></figure>
+<p>嗯～，研究一陣子，將不同裝置的 css 來寫到不同檔案路徑，然後 config designed base 可以依不同路徑套用不同 designed base 就可以轉出正常的 vw，登登！！</p>
+<p>喔，我是用 Vite + PostCSS plugin，所以參考資料較少，還好弄得出來。<br><a target="_blank" rel="noopener" href="https://github.com/ShengChih/Taiwan_Tourguide/blob/dev/vite.config.ts">Vite 根據不同裝置設定 postcss-px-to-viewport</a></p>
+<p>這個解決之後，繼續往下開發，又遇到新問題….</p>
+<ul>
+<li>2022&#x2F;10&#x2F;21<br><a target="_blank" rel="noopener" href="https://judes.me/frontend/2018/01/07/why_circle_not_round.html">轉換單位的誤差</a></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Q: Postcss plugin 對 nesting css 支援，似乎有問題？</span><br></pre></td></tr></table></figure>
+<p>我在寫 @meida 裡面用了 @import 或者 tailwind @apply，類似下面這種錯，但我用了裡面的解決方式無效。<br><a target="_blank" rel="noopener" href="https://github.com/tailwindlabs/tailwindcss/issues/4995">CSS Nested at-rules error 之一</a><br><a target="_blank" rel="noopener" href="https://github.com/tailwindlabs/tailwindcss/discussions/7683">CSS Nested at-rules error 之二</a></p>
+<p>目前還未解決，但我的思路是想，sass @import 的語法是由 postcss-import 這個 plugins 提供，@media 是原生 css，我又再裡面用 tailwindcss @apply 這是由 tailwindcss plugins 提供，<br>nesting css 是由 postcss-nesting and tailwindcss&#x2F;nesting plugins 提供，應該只是先後 parser 順序不對吧，或者不能只單純用 plugins 先後順序，可能要對這幾個 postcss plugins 寫一些客製判斷吧。</p>
+<p>今日先這樣。</p>
+<ul>
+<li>2022&#x2F;10&#x2F;21 後來發現只是我在寫 scss，單純沒寫到 ; 所以造成 parse 錯誤，補上就都正確了<br>另外 postcss-nesting 已經停止維護，改用 postcss-nested 取代。</li>
+</ul>
+
+  <p> — 2022年11月24日</p>
+  
+
+
+        </div>
+        <div class="row mt-2">
+  <h3>Search</h3>
+  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
+  <div style="margin-top: 1.5rem;">
+    <ul id="result"></ul>
+  </div>
+</div>
+        <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with ❤ and
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/ShengChih" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://instagram.com/ms0529756" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Instagram">
+        <svg class="instagram svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+      </a>
+      
+
+      
+
+    </div>
+  
+</div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+  
+</body>
+
+</html>

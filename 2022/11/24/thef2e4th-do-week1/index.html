@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>回顧 2022.11.07 - 2022.11.13 - 視差滾動設計</title>
+  
+  <link rel="canonical" href="https://shengchih.github.io/2022/11/24/thef2e4th-do-week1/">  
+  
+  <meta name="description" content="瀑布文第一週比的是視差滾動設計，原本六角 F2E 的官網就使用了 scroll &amp;#x2F; svg &amp;#x2F; canvas 動態效果呈現網站的動態，不是那種單純死板板呈現資訊還是呈現圖表，題目就是重設計官網，當然設計師做設計，工程師做實作，由於我對這塊很少摸索，但也卻覺得三週的比賽裡我可能最喜">
+  
+  
+  <meta name="keywords" content="blog">
+  
+  <meta name="author" content="PalaPalado">
+  
+  
+  
+  <meta property="og:site_name" content="Palapalado blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="回顧 2022.11.07 - 2022.11.13 - 視差滾動設計" />
+  
+  <meta property="og:description" content="瀑布文第一週比的是視差滾動設計，原本六角 F2E 的官網就使用了 scroll &amp;#x2F; svg &amp;#x2F; canvas 動態效果呈現網站的動態，不是那種單純死板板呈現資訊還是呈現圖表，題目就是重設計官網，當然設計師做設計，工程師做實作，由於我對這塊很少摸索，但也卻覺得三週的比賽裡我可能最喜">
+  
+  <meta property="og:url" content="https://shengchih.github.io/2022/11/24/thef2e4th-do-week1/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="回顧 2022.11.07 - 2022.11.13 - 視差滾動設計">
+  
+  <meta name="twitter:description" content="瀑布文第一週比的是視差滾動設計，原本六角 F2E 的官網就使用了 scroll &amp;#x2F; svg &amp;#x2F; canvas 動態效果呈現網站的動態，不是那種單純死板板呈現資訊還是呈現圖表，題目就是重設計官網，當然設計師做設計，工程師做實作，由於我對這塊很少摸索，但也卻覺得三週的比賽裡我可能最喜">
+  
+  
+  
+  
+  <meta name="twitter:url" content="https://shengchih.github.io/2022/11/24/thef2e4th-do-week1/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FA0CE;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FA0CE 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FA0CE;
+  }
+  .nanobar .bar {
+    background: #0FA0CE;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FA0CE;
+    border-color: #0FA0CE;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FA0CE;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  
+  <script src="/js/pic.min.js" defer></script>
+  
+
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="six columns ml-1">
+    <h1 class="mt-2">
+      Hi PalaPalado.
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/archives" class="ml">Posts</a>
+          
+        
+          
+          <a href="/about" class="ml">About</a>
+          
+        
+        
+          
+            <a href="mailto:ms0529756@gmail.com" target="_blank" class="ml">Email</a>
+          
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h2>回顧 2022.11.07 - 2022.11.13 - 視差滾動設計</h2>
+
+  <h2 id="瀑布文"><a href="#瀑布文" class="headerlink" title="瀑布文"></a>瀑布文</h2><p>第一週比的是視差滾動設計，原本六角 F2E 的官網就使用了 scroll &#x2F; svg &#x2F; canvas 動態效果呈現網站的動態，不是那種單純死板板呈現資訊還是呈現圖表，題目就是重設計官網，當然設計師做設計，工程師做實作，由於我對這塊很少摸索，但也卻覺得三週的比賽裡我可能最喜歡這關，一方面是不熟悉如何實作，一方面是一般接案網站應該也很少這種酷炫的東西吧，企業在台灣做這個的需求不一定很多（？。</p>
+<p>但目前職涯裡的經驗，多屬於軟工知識，怎麼抽象化怎麼重用元件，降低資料量傳輸，降低 API 呼叫次數，效能，code splitting，tree shaking….，即使跟前端有關比較難產生什麼創意的感覺，而且做很多次策略或許也都差不多這樣，頂多就是不會，然後找資料，解決問題。</p>
+<p>設計類型裡專案，即使用相同的技巧及經驗，實作類似，呈現效果的反差是巨大的。或許會說用相同的軟工知識創造出不同產品，解決不同問題或不同領域的事情，嗯，對，但機會少，要經營產品需要花費的時間多，事情及溝通跨部門溝通也相對雜，人力物力耗用也多。這種設計專案，時程短視覺變化大，框架及工具的選擇侷限，難得是發想創意及一開始不知道怎麼實作的吧啊啦，還有就是需求不一定多，或現在不流行。</p>
+<p>嗯，我挑選了一個動畫效果沒那麼多，先試試水溫的設計稿，但一開始鬼打牆了一陣。</p>
+<p>由於視差滾動倚賴滾動 scroll 事件，可能會有觸發 animation &#x2F; 背景圖和滾輪滑動區塊圖交錯之類的</p>
+<p>greensock GSAP scrolltrigger plugon 沒特別研究，可能比較知名？看了很多範例都是使用 queryselector or $.jquery<br>ReactJS 使用 GSAP 綁定事件就要注意 DOM 是不是被 mouted 了，還有 re-render 可能造成事件多次綁定之類的問題<br>另外要跨組件共享 scroll timeline 的問題，若要跨好幾層是不是要引入 state management ?</p>
+<p>這是 greensock 寫的 GSAP + ReactJS 的文章</p>
+<p>初階<br><a target="_blank" rel="noopener" href="https://greensock.com/react/">https://greensock.com/react/</a></p>
+<p>進階<br><a target="_blank" rel="noopener" href="https://greensock.com/react-advanced/">https://greensock.com/react-advanced/</a></p>
+<p>文章提到「由父組件傳入子組件」 or 「使用 React Context 做為 data provider 傳遞」，大多數動畫可能都會正常運作，但避免不了 ReactJS re-render 機制影響效能的問題，如有包含 mouse move evnet &#x2F; scroll event 可能就會有效能問題 ?</p>
+<p>但我看其他人實作完，點了點他們站點，感覺好像也沒差？</p>
+<p>但我看了這些文章之後….，立馬選了很冗也很醜的寫法…「Imperative Commuication」…<br>也就是 useRef + useImperativeHandle + forwardRef<br>這是讓父組件可以呼叫子組件的 function or 取得子組件的 ref 直接做 DOM 操作。</p>
+<p>最後我雖然完成了 RWD 及 動畫特效，我自評程式是相當的醜，另外比起 Vue 而言，我對 ReactJS 較於熟悉，卻不是可以咻咻咻的實作及使用姿勢正確，我立時對 ReactJS 有新的感想。</p>
+<p>比較 ReactJS 及 VueJS，不比底層實作，讓我很直觀的是:</p>
+<p>我覺得 ReactJS 門檻高，語法彈性，沒有 view model 這層，需要完全自己寫，而 render 可控制元件細粒度可能比較高？ (有各種反模式的優化及調用？)，它的年紀及生態相對年長，支持者多半偏工程背景的開發人員及大型專案業界使用。</p>
+<p>但光是門檻高包袱多，學習的雜訊就會多，以前是 Class based component，後來開始 hook 推行，但舊的文章仍存，且官網文件還很多 class based 的文件來不及更新，因此學習者要找出最佳實務的方式，比較跌跌撞撞？</p>
+<p>開發人員學習也沒有什麼最佳實務，查什麼用什麼，知識邊腦補邊且戰且走，用錯了再修正，一般的 example 或技術文章都也只是應用在最簡例子，嗯，我的感想就這樣。</p>
+<p>呈上成果<br><a target="_blank" rel="noopener" href="https://files.fireweedsound.xyz/gsapnewspaper">https://files.fireweedsound.xyz/gsapnewspaper</a></p>
+<p>嗯～ 我現在對這個挺有興趣的，再來研究。</p>
+
+  <p> — 2022年11月24日</p>
+  
+
+
+        </div>
+        <div class="row mt-2">
+  <h3>Search</h3>
+  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
+  <div style="margin-top: 1.5rem;">
+    <ul id="result"></ul>
+  </div>
+</div>
+        <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with ❤ and
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/ShengChih" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://instagram.com/ms0529756" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Instagram">
+        <svg class="instagram svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+      </a>
+      
+
+      
+
+    </div>
+  
+</div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+  
+</body>
+
+</html>
