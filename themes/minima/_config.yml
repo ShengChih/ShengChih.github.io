@@ -108,7 +108,7 @@ resume:
       description: 此為開源專案，後端 Django API，僅實作驗證 OAuth2.0 token 功能，負責讓前端為 SSR Next OAuth 登入後，用 OAuth2.0 token 換取 django api token 
       contribution: 主要貢獻者 / 維護者
     - name: <a style="color:#1654b9;" href="http://djdlfmonhbvcv.cloudfront.net/sign-in">SCM 供應商管理鏈系統</a>
-      description: 整合 SAP 系統<br>流程及出貨功能<br>發票及請款功能<br>分頁/搜尋 API 效能改善，從 3min to 20ms
+      description: 整合 SAP 系統<br>流程及出貨功能<br>發票及請款功能<br>分頁/搜尋 API 效能改善 80%
       contribution: 主要貢獻者 / 維護者
     - name: OCR 系統整合
       description: AWS Infra 建置<br>認證系統
