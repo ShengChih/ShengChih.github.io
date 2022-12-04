@@ -38,6 +38,11 @@ let & const 有 hosting，但行為跟 var 有點不同
 - 你看過 V8 編譯出來的程式碼
 忽略
 
+另外看到的是
+函數表達式不會被 hosting (因為它是賦值的語法，按照前面知道的，只有宣告式才會被提前)，函數宣告式才會
+![](/images/20221204/hosting-function-difference.png)
+
+
 
 ## Ref.
 [我知道你懂 hoisting，可是你了解到多深？](https://blog.techbridge.cc/2018/11/10/javascript-hoisting/)
