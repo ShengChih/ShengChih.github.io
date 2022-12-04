@@ -12,11 +12,11 @@
   <meta charset="utf-8">
 
   
-  <title>All Posts - PalaPalado</title>
+  <title>JS hosting</title>
   
-  <link rel="canonical" href="https://shengchih.github.io/archives/2022/12/">  
+  <link rel="canonical" href="https://shengchih.github.io/2022/12/04/js-hosting/">  
   
-  <meta name="description" content="blog">
+  <meta name="description" content="關於 hosting 我覺得已經有很詳細的文章，在說明整個運作及很多設計及實作細節都有在這篇文章寫出來。 我知道你懂 hoisting，可是你了解到多深？ 說實在我也寫不出這種文章 XD，還好我只要讀 &amp;amp; 擷取就好 不過還是讓肌肉訓練一下  你知道什麼是 hoistingJS 進入執行前，會">
   
   
   <meta name="keywords" content="blog">
@@ -24,28 +24,24 @@
   <meta name="author" content="PalaPalado">
   
   
-  <meta property="og:image" content="https://shengchih.github.io/images/thumbnail.jpg">
-  
   
   <meta property="og:site_name" content="Palapalado blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="All Posts - PalaPalado" />
+  <meta property="og:title" content="JS hosting" />
   
-  <meta property="og:description" content="blog">
+  <meta property="og:description" content="關於 hosting 我覺得已經有很詳細的文章，在說明整個運作及很多設計及實作細節都有在這篇文章寫出來。 我知道你懂 hoisting，可是你了解到多深？ 說實在我也寫不出這種文章 XD，還好我只要讀 &amp;amp; 擷取就好 不過還是讓肌肉訓練一下  你知道什麼是 hoistingJS 進入執行前，會">
   
-  <meta property="og:url" content="https://shengchih.github.io/archives/2022/12/" />
+  <meta property="og:url" content="https://shengchih.github.io/2022/12/04/js-hosting/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="All Posts - PalaPalado">
+  <meta name="twitter:title" content="JS hosting">
   
-  <meta name="twitter:description" content="blog">
-  
-  
-  
-  <meta name="twitter:image" content="https://shengchih.github.io/images/thumbnail.jpg">
+  <meta name="twitter:description" content="關於 hosting 我覺得已經有很詳細的文章，在說明整個運作及很多設計及實作細節都有在這篇文章寫出來。 我知道你懂 hoisting，可是你了解到多深？ 說實在我也寫不出這種文章 XD，還好我只要讀 &amp;amp; 擷取就好 不過還是讓肌肉訓練一下  你知道什麼是 hoistingJS 進入執行前，會">
   
   
-  <meta name="twitter:url" content="https://shengchih.github.io/archives/2022/12/" />
+  
+  
+  <meta name="twitter:url" content="https://shengchih.github.io/2022/12/04/js-hosting/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -204,48 +200,38 @@
 </div>
 
         <div class="trans">
-          
-<h2>All Posts</h2>
+            <h2>JS hosting</h2>
 
+  <p>關於 hosting 我覺得已經有很詳細的文章，在說明整個運作及很多設計及實作細節都有在這篇文章寫出來。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.techbridge.cc/2018/11/10/javascript-hoisting/">我知道你懂 hoisting，可是你了解到多深？</a></p>
+<p>說實在我也寫不出這種文章 XD，還好我只要讀 &amp; 擷取就好</p>
+<p>不過還是讓肌肉訓練一下</p>
+<ul>
+<li><p>你知道什麼是 hoisting<br>JS 進入執行前，會先將所有宣告會先提前執行 (編譯階段)，而賦值的動作是在執行後才開始執行。<br>實際上的程式不會變動，但經過解譯器或編譯器出來的結果會提前到最前面。</p>
+</li>
+<li><p>你知道 hoisting 只會提升宣告而非賦值<br>如上</p>
+</li>
+<li><p>你知道 function 宣告、function 的參數以及一般變數宣告同時出現時的提升優先順序<br>function 宣告優先權比一般變數高，如圖<br><img src="/images/20221204/hosting-order.png"><br>function 參數賦值比 function 內部賦值快，如圖<br><img src="/images/20221204/hosting-function-order.png"></p>
+</li>
+<li><p>你知道 let 跟 const 沒有 hoisting<br>let &amp; const 有 hosting，但行為跟 var 有點不同<br><img src="/images/20221204/hosting-let.png"></p>
+</li>
+<li><p>你知道第五點是錯的，其實有但只是表現形式不一樣</p>
+</li>
+<li><p>你知道有關第六點，有個概念叫做 TDZ（Temporal Dead Zone）<br>在「提升之後」以及「賦值之前」這段「期間」，如果你存取它就會拋出錯誤。<br>而這段期間就稱做是 TDZ，它是一個為了解釋 let 與 const 的 hoisting 行為所提出的一個名詞。<br><img src="/images/20221204/hosting-tdz.png"></p>
+</li>
+<li><p>你看過 ES3 的規格書，知道裡面是怎麼描述的<br>忽略</p>
+</li>
+<li><p>你看過 ES6 的規格書，知道裡面是怎麼描述的<br>忽略</p>
+</li>
+<li><p>你知道 hoisting 背後的原理是什麼<br>簡單的說法，編譯階段先對宣告的語法提升產生 VO，在執行階段透過 VO 去存取數值</p>
+</li>
+<li><p>你看過 V8 編譯出來的程式碼<br>忽略</p>
+</li>
+</ul>
+<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref."></a>Ref.</h2><p><a target="_blank" rel="noopener" href="https://blog.techbridge.cc/2018/11/10/javascript-hoisting/">我知道你懂 hoisting，可是你了解到多深？</a></p>
 
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年12月4日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/12/04/js-hosting/" class="">
-            
-              JS hosting
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年12月4日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/12/04/js-scope/" class="">
-            
-              Scope, First-class function, Closure
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-<div class="pagination-bar">
-  <ul class="pagination">
-    
-    
-  </ul>
-</div>
+  <p> — 2022年12月4日</p>
+  
 
 
         </div>

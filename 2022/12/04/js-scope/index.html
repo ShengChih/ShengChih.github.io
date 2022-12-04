@@ -206,7 +206,7 @@
 <h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>Scope 定義變數使用的範圍，主要是為了限制變數在程式裡作用的範圍，也限制其他作用域在運算時不因為重名而影響變數的數值，讓程式產生可預期的結果，另外也避免空間資源被過度濫用:</p>
 <p>L1: 定義 message 為一個全域變數，表示所有作用域都可存取的變數，反之都稱為局部變數。</p>
 <p>L9: 定義 message 為一個局部變數，僅在 returnLocal 裡面作用，其他作用域無法存取該變數，該變數之後也會被釋放占用的記憶體空間。</p>
-<p>變數查找的行為會由內至外，也就是說從最近的作用域往外找，譬如 L5 <code>return message</code> 在 function <code>returnGlobal</code> 嘗試存取 message 這個變數，但發現沒有定義 message 這個變數，因此會再往外找到 L1 message 的全域變數，並存取其值返回給呼叫者。</p>
+<p>變數查找的行為會透過 scope chain 由內至外，也就是說從最近的作用域往外找，譬如 L5 <code>return message</code> 在 function <code>returnGlobal</code> 嘗試存取 message 這個變數，但發現沒有定義 message 這個變數，因此會再往外找到 L1 message 的全域變數，並存取其值返回給呼叫者。</p>
 <p>那麼再看看 function <code>returnLocal</code> 在 <code>return message</code> 一樣也是先找到最近的作用域，嘗試存取 message 變數，發現一個被賦值為 local1 的 message 變數，繼而返回給呼叫者。</p>
 <p>再看看 function <code>closureFunc</code> return 一個箭頭匿名函數，裡面 return 一個 message，這個 message 匿名函數未定義，因此往外找到 closureFunc 定義的 message，而且經 L29 呼叫後，該 message 仍然可以回傳建立函數時的數值。</p>
 <blockquote>
