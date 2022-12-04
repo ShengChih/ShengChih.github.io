@@ -12,7 +12,7 @@ L1: 定義 message 為一個全域變數，表示所有作用域都可存取的�
 
 L9: 定義 message 為一個局部變數，僅在 returnLocal 裡面作用，其他作用域無法存取該變數，該變數之後也會被釋放占用的記憶體空間。
 
-變數查找的行為會由內至外，也就是說從最近的作用域往外找，譬如 L5 `return message` 在 function `returnGlobal` 嘗試存取 message 這個變數，但發現沒有定義 message 這個變數，因此會再往外找到 L1 message 的全域變數，並存取其值返回給呼叫者。
+變數查找的行為會透過 scope chain 由內至外，也就是說從最近的作用域往外找，譬如 L5 `return message` 在 function `returnGlobal` 嘗試存取 message 這個變數，但發現沒有定義 message 這個變數，因此會再往外找到 L1 message 的全域變數，並存取其值返回給呼叫者。
 
 那麼再看看 function `returnLocal` 在 `return message` 一樣也是先找到最近的作用域，嘗試存取 message 變數，發現一個被賦值為 local1 的 message 變數，繼而返回給呼叫者。
 
