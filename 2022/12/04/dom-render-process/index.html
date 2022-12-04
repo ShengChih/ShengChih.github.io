@@ -12,11 +12,11 @@
   <meta charset="utf-8">
 
   
-  <title>Palapalado blog</title>
+  <title>DOM render</title>
   
-  <link rel="canonical" href="https://shengchih.github.io/page/2/">  
+  <link rel="canonical" href="https://shengchih.github.io/2022/12/04/dom-render-process/">  
   
-  <meta name="description" content="blog">
+  <meta name="description" content="嗯，之前看到這篇文章，一直知識這塊大概只需要點擊收藏，大概就是高近視的老師閱券，嗯，學會了 XDDOM performanceWeb Performance OptimizationRendering Performance 一樣先來個肌肉訓練，進入正題好了，先說瀏覽器透過網址向 server 取得">
   
   
   <meta name="keywords" content="blog">
@@ -24,28 +24,24 @@
   <meta name="author" content="PalaPalado">
   
   
-  <meta property="og:image" content="https://shengchih.github.io/images/thumbnail.jpg">
-  
   
   <meta property="og:site_name" content="Palapalado blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Palapalado blog" />
+  <meta property="og:title" content="DOM render" />
   
-  <meta property="og:description" content="blog">
+  <meta property="og:description" content="嗯，之前看到這篇文章，一直知識這塊大概只需要點擊收藏，大概就是高近視的老師閱券，嗯，學會了 XDDOM performanceWeb Performance OptimizationRendering Performance 一樣先來個肌肉訓練，進入正題好了，先說瀏覽器透過網址向 server 取得">
   
-  <meta property="og:url" content="https://shengchih.github.io/page/2/" />
+  <meta property="og:url" content="https://shengchih.github.io/2022/12/04/dom-render-process/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Palapalado blog">
+  <meta name="twitter:title" content="DOM render">
   
-  <meta name="twitter:description" content="blog">
-  
-  
-  
-  <meta name="twitter:image" content="https://shengchih.github.io/images/thumbnail.jpg">
+  <meta name="twitter:description" content="嗯，之前看到這篇文章，一直知識這塊大概只需要點擊收藏，大概就是高近視的老師閱券，嗯，學會了 XDDOM performanceWeb Performance OptimizationRendering Performance 一樣先來個肌肉訓練，進入正題好了，先說瀏覽器透過網址向 server 取得">
   
   
-  <meta name="twitter:url" content="https://shengchih.github.io/page/2/" />
+  
+  
+  <meta name="twitter:url" content="https://shengchih.github.io/2022/12/04/dom-render-process/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -204,76 +200,57 @@
 </div>
 
         <div class="trans">
-          <div class="row">
-  <div class="column">
-    <!-- Main information, edit it on theme/_config.yml -->
-    <h2 class="mb-2">ShengChih</h2>
-    <p>臺南人，居住在台灣的網站工程師 🇹🇼</p>
-    <p></p>
-  </div>
-</div>
+            <h2>DOM render</h2>
 
-<h3>Recent Posts</h3>
+  <p>嗯，之前看到這篇文章，一直知識這塊大概只需要點擊收藏，大概就是高近視的老師閱券，嗯，學會了 XD<br><a target="_blank" rel="noopener" href="https://gist.github.com/ShengChih/e47961feace907b444bae558a6333974">DOM performance</a><br><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLAwxTw4SYaPmKmNX-INgcxQWf30KuWa_A">Web Performance Optimization</a><br><a target="_blank" rel="noopener" href="https://web.dev/rendering-performance/">Rendering Performance</a></p>
+<p>一樣先來個肌肉訓練，進入正題好了，先說瀏覽器透過網址向 server 取得 response 內容 (HTML)，並且開始建構 DOM tree 的流程。<br>有些還沒有看完，之後再回頭補完好了。</p>
+<h2 id="解析-HTML"><a href="#解析-HTML" class="headerlink" title="解析 HTML"></a>解析 HTML</h2><ul>
+<li>Browser 向 server 取得 html</li>
+<li>解析 HTML 成 tokens, 如 tagName, Attributes</li>
+<li>tokens 再轉成 nodes</li>
+<li>nodes 再轉成 DOM tree</li>
+<li>CSSOM 從 css rules 建構出來</li>
+</ul>
+<blockquote>
+<p>解析 HTML 過程裡，有一些渲染阻塞的問題，而在阻塞過程都以白屏顯示:<br>DOM tree 是逐步解析 HTML，且逐部增加的，不是一次性的加入<br>解析過程若遇到 <code>&lt;link&gt;</code> token，還是 <code>&lt;script&gt;</code> token，這都會阻塞 DOM tree 的建構<br>因為這些檔案，可能牽涉 DOM render 資訊，如 SPA，JS 可以 render DOM &#x2F; 調整 style<br>CSS 檔案則可以再產生出新的 CSSOM 節點<br>另外，CSSOM 無法被建構成一個完整的 tree，因為並非每一個 DOM 都有 styles 屬性，想靠 styles 建立出完整的 tree 是不可能的，因此它只能依賴著 DOM tree 去附加 styles 屬性</p>
+</blockquote>
+<h2 id="Render-tree-根據-CSSOM-及-DOM-tree-合併"><a href="#Render-tree-根據-CSSOM-及-DOM-tree-合併" class="headerlink" title="Render tree - 根據 CSSOM 及 DOM tree 合併"></a>Render tree - 根據 CSSOM 及 DOM tree 合併</h2><ul>
+<li>當所有 JS &#x2F; CSS 及 HTML 都已完成處理，CSSOM + DOM tree 會合併成一棵 Render tree<ul>
+<li>這包含了可視元件及其 styles 的運算</li>
+<li>不可視的元件會被 prune 掉，以節省資源，如 meta &#x2F; link &#x2F; head 這種 </li>
+<li>Reflow 階段會去計算所有可視節點的位置和大小</li>
+<li>決定多層頁面 layer (z-index &#x2F; fixed &#x2F; absolute )</li>
+</ul>
+</li>
+</ul>
+<h2 id="Paint"><a href="#Paint" class="headerlink" title="Paint"></a>Paint</h2><ul>
+<li>當 render tree 已經將所有 layout style (位置&#x2F;大小&#x2F;圖層)相關都已處理完畢，因此就只需要輸出到畫面</li>
+</ul>
+<blockquote>
+<p>JS 執行 &amp; 渲染 Paint 都在主執行緒執行，若互相搶取資源就會造成畫面卡頓。</p>
+</blockquote>
+<h2 id="效能改善的方案"><a href="#效能改善的方案" class="headerlink" title="效能改善的方案"></a>效能改善的方案</h2><h3 id="減少-repaints-amp-reflow-觸發次數"><a href="#減少-repaints-amp-reflow-觸發次數" class="headerlink" title="減少 repaints &amp; reflow 觸發次數"></a>減少 repaints &amp; reflow 觸發次數</h3><ul>
+<li>批量修改 styles</li>
+<li>批量新增 &#x2F; 修改 &#x2F; 刪除 DOM</li>
+<li>使用 visibility: hidden&#x2F;visible  取代 display: none</li>
+<li>使用 transform 取代  top &#x2F; left &#x2F; bottom &#x2F; right</li>
+<li>preload locally font file (字型會影響 layout 造成 reflow)</li>
+<li>image 可事先定義 layout 大小，不會載入圖片後造成 reflow</li>
+<li>建立圖層 z-index &#x2F; fixed &#x2F; absolute</li>
+<li>viewport 大小改變</li>
+<li>:hover, :before, :after</li>
+</ul>
+<h3 id="阻塞資源"><a href="#阻塞資源" class="headerlink" title="阻塞資源"></a>阻塞資源</h3><ul>
+<li>減少不必要的資源請求</li>
+<li>只載入必要的資源 (使用 js tree shaking &amp; 移除未用的 css)</li>
+<li>最小化資源 (使用 server gzip &amp; 壓縮 js &#x2F; css)</li>
+<li>廣告 tracking 非網站主要運行邏輯，可延後載入</li>
+<li>縮小 font 檔案</li>
+</ul>
 
+  <p> — 2022年12月4日</p>
+  
 
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">2022年12月4日</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2022/12/04/dom-render-process/" >
-      
-        DOM render
-      
-    </a>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">2022年12月4日</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2022/12/04/js-hosting/" >
-      
-        JS hosting
-      
-    </a>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">2022年12月4日</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2022/12/04/js-scope/" >
-      
-        Scope, First-class function, Closure
-      
-    </a>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">2022年11月25日</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2022/11/25/thef2e4th-week2/" >
-      
-        回顧 2022.11.14 - 2022.11.18 - 點點簽
-      
-    </a>
-  </div>
-</div>
-
-
-<h4> <a href="/archives">All Posts</a></h4>
 
         </div>
         <div class="row mt-2">
