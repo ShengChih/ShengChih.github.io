@@ -12,11 +12,11 @@
   <meta charset="utf-8">
 
   
-  <title>DOM render</title>
+  <title>跟 SEO 可能相關的小事 ?</title>
   
-  <link rel="canonical" href="https://shengchih.github.io/2022/12/04/dom-render-process/">  
+  <link rel="canonical" href="https://shengchih.github.io/2022/12/04/seo-improvement/">  
   
-  <meta name="description" content="嗯，之前看到這篇文章，一直知識這塊大概只需要點擊收藏，大概就是高近視的老師閱券，嗯，學會了 XDDOM performanceWeb Performance OptimizationRendering Performance 一樣先來個肌肉訓練，進入正題好了，先說瀏覽器透過網址向 server 取得">
+  <meta name="description" content="HTTPS &amp;lt;meta name=&amp;quot;referrer&amp;quot;&amp;gt;有關於安全性的 Referrer 政策The Meta Referrer Tag: An Advancement for SEO and the Internet  語意化 HTML&amp;lt;title&amp;gt;&amp;l">
   
   
   <meta name="keywords" content="blog">
@@ -27,21 +27,21 @@
   
   <meta property="og:site_name" content="Palapalado blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="DOM render" />
+  <meta property="og:title" content="跟 SEO 可能相關的小事 ?" />
   
-  <meta property="og:description" content="嗯，之前看到這篇文章，一直知識這塊大概只需要點擊收藏，大概就是高近視的老師閱券，嗯，學會了 XDDOM performanceWeb Performance OptimizationRendering Performance 一樣先來個肌肉訓練，進入正題好了，先說瀏覽器透過網址向 server 取得">
+  <meta property="og:description" content="HTTPS &amp;lt;meta name=&amp;quot;referrer&amp;quot;&amp;gt;有關於安全性的 Referrer 政策The Meta Referrer Tag: An Advancement for SEO and the Internet  語意化 HTML&amp;lt;title&amp;gt;&amp;l">
   
-  <meta property="og:url" content="https://shengchih.github.io/2022/12/04/dom-render-process/" />
+  <meta property="og:url" content="https://shengchih.github.io/2022/12/04/seo-improvement/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DOM render">
+  <meta name="twitter:title" content="跟 SEO 可能相關的小事 ?">
   
-  <meta name="twitter:description" content="嗯，之前看到這篇文章，一直知識這塊大概只需要點擊收藏，大概就是高近視的老師閱券，嗯，學會了 XDDOM performanceWeb Performance OptimizationRendering Performance 一樣先來個肌肉訓練，進入正題好了，先說瀏覽器透過網址向 server 取得">
-  
-  
+  <meta name="twitter:description" content="HTTPS &amp;lt;meta name=&amp;quot;referrer&amp;quot;&amp;gt;有關於安全性的 Referrer 政策The Meta Referrer Tag: An Advancement for SEO and the Internet  語意化 HTML&amp;lt;title&amp;gt;&amp;l">
   
   
-  <meta name="twitter:url" content="https://shengchih.github.io/2022/12/04/dom-render-process/" />
+  
+  
+  <meta name="twitter:url" content="https://shengchih.github.io/2022/12/04/seo-improvement/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -200,71 +200,33 @@
 </div>
 
         <div class="trans">
-            <h2>DOM render</h2>
+            <h2>跟 SEO 可能相關的小事 ?</h2>
 
-  <p>嗯，之前看到這篇文章，一直知識這塊大概只需要點擊收藏，大概就是高近視的老師閱券，嗯，學會了 XD<br><a target="_blank" rel="noopener" href="https://gist.github.com/ShengChih/e47961feace907b444bae558a6333974">DOM performance</a><br><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLAwxTw4SYaPmKmNX-INgcxQWf30KuWa_A">Web Performance Optimization</a><br><a target="_blank" rel="noopener" href="https://web.dev/rendering-performance/">Rendering Performance</a></p>
-<p>一樣先來個肌肉訓練，進入正題好了，先說瀏覽器透過網址向 server 取得 response 內容 (HTML)，並且開始建構 DOM tree 的流程。<br>有些還沒有看完，之後再回頭補完好了。</p>
-<h2 id="解析-HTML"><a href="#解析-HTML" class="headerlink" title="解析 HTML"></a>解析 HTML</h2><ul>
-<li>Browser 向 server 取得 html</li>
-<li>解析 HTML 成 tokens, 如 tagName, Attributes</li>
-<li>tokens 再轉成 nodes</li>
-<li>nodes 再轉成 DOM tree</li>
-<li>CSSOM 從 css rules 建構出來</li>
+  <h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><ul>
+<li><code>&lt;meta name=&quot;referrer&quot;&gt;</code><br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">有關於安全性的 Referrer 政策</a><br><a target="_blank" rel="noopener" href="https://moz.com/blog/meta-referrer-tag">The Meta Referrer Tag: An Advancement for SEO and the Internet</a></li>
 </ul>
-<blockquote>
-<p>解析 HTML 過程裡，有一些渲染阻塞的問題，而在阻塞過程都以白屏顯示:<br>DOM tree 是逐步解析 HTML，且逐部增加的，不是一次性的加入<br>解析過程若遇到 <code>&lt;link&gt;</code> token，還是 <code>&lt;script&gt;</code> token，這都會阻塞 DOM tree 的建構<br>因為這些檔案，可能牽涉 DOM render 資訊，如 SPA，JS 可以 render DOM &#x2F; 調整 style<br>CSS 檔案則可以再產生出新的 CSSOM 節點<br>另外，CSSOM 無法被建構成一個完整的 tree，因為並非每一個 DOM 都有 styles 屬性，想靠 styles 建立出完整的 tree 是不可能的，因此它只能依賴著 DOM tree 去附加 styles 屬性</p>
-</blockquote>
-<h2 id="Render-tree-根據-CSSOM-及-DOM-tree-合併"><a href="#Render-tree-根據-CSSOM-及-DOM-tree-合併" class="headerlink" title="Render tree - 根據 CSSOM 及 DOM tree 合併"></a>Render tree - 根據 CSSOM 及 DOM tree 合併</h2><ul>
-<li>當所有 JS &#x2F; CSS 及 HTML 都已完成處理，CSSOM + DOM tree 會合併成一棵 Render tree<ul>
-<li>這包含了可視元件及其 styles 的運算</li>
-<li>不可視的元件會被 prune 掉，以節省資源，如 meta &#x2F; link &#x2F; head 這種 </li>
-<li>Reflow 階段會去計算所有可視節點的位置和大小</li>
-<li>決定多層頁面 layer (z-index &#x2F; fixed &#x2F; absolute )</li>
+<h2 id="語意化-HTML"><a href="#語意化-HTML" class="headerlink" title="語意化 HTML"></a>語意化 HTML</h2><p><code>&lt;title&gt;</code><br><code>&lt;meta name=&quot;description&quot; content=&quot;xxxxx&quot;&gt;</code><br><code>&lt;meta name=&quot;keyword&quot; content=&quot;xxxxx&quot;&gt;</code><br><code>&lt;h1&gt; &lt;h2&gt; ...</code><br><code>&lt;img alt=&quot;xxx&quot; title=&quot;xxx&quot;&gt;</code><br><code>&lt;a title=&quot;&quot; rel=&quot;&quot;&gt;</code><br><code>&lt;strong&gt;</code><br><code>&lt;em&gt;</code></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML">HTML 可訪問性</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/CSS_and_JavaScript">CSS &#x2F; JS 最佳實作</a></li>
 </ul>
+<h2 id="重要內容"><a href="#重要內容" class="headerlink" title="重要內容"></a>重要內容</h2><ul>
+<li>重要內容盡量往上放</li>
+<li>不用 JS render</li>
+</ul>
+<h2 id="控制每頁的連結數"><a href="#控制每頁的連結數" class="headerlink" title="控制每頁的連結數"></a>控制每頁的連結數</h2><ul>
+<li>不需要 SEO 的連結可加上<br><code>&lt;a ref=&quot;nofollow&quot;&gt;</code></li>
+<li>網站的連結深度不要太多，爬蟲不一定會全部爬完 (deep &lt;&#x3D; 3)</li>
+</ul>
+<h2 id="改善頁面載入速度"><a href="#改善頁面載入速度" class="headerlink" title="改善頁面載入速度"></a>改善頁面載入速度</h2><p><a href="/2022/12/04/dom-render-process/">DOM render</a></p>
+<h2 id="Meta-tag"><a href="#Meta-tag" class="headerlink" title="Meta tag"></a>Meta tag</h2><ul>
+<li><p>viewport 設備跟邏輯像素一致，不可讓使用者縮放<br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no&quot;&gt;</code></p>
 </li>
-</ul>
-<h2 id="Paint"><a href="#Paint" class="headerlink" title="Paint"></a>Paint</h2><ul>
-<li>當 render tree 已經將所有 layout style (位置&#x2F;大小&#x2F;圖層)相關都已處理完畢，因此就只需要輸出到畫面</li>
-</ul>
-<blockquote>
-<p>JS 執行 &amp; 渲染 Paint 都在主執行緒執行，若互相搶取資源就會造成畫面卡頓。</p>
-</blockquote>
-<h2 id="效能改善的方案"><a href="#效能改善的方案" class="headerlink" title="效能改善的方案"></a>效能改善的方案</h2><h3 id="減少-repaints-amp-reflow-觸發次數"><a href="#減少-repaints-amp-reflow-觸發次數" class="headerlink" title="減少 repaints &amp; reflow 觸發次數"></a>減少 repaints &amp; reflow 觸發次數</h3><ul>
-<li>批量修改 styles</li>
-<li>批量新增 &#x2F; 修改 &#x2F; 刪除 DOM</li>
-<li>使用 visibility: hidden&#x2F;visible  取代 display: none</li>
-<li>使用 transform 取代  top &#x2F; left &#x2F; bottom &#x2F; right</li>
-<li>preload locally font file (字型會影響 layout 造成 reflow)</li>
-<li>image 可事先定義 layout 大小，不會載入圖片後造成 reflow</li>
-<li>建立圖層 z-index &#x2F; fixed &#x2F; absolute</li>
-<li>viewport 大小改變</li>
-<li>:hover, :before, :after</li>
-</ul>
-<h3 id="阻塞資源"><a href="#阻塞資源" class="headerlink" title="阻塞資源"></a>阻塞資源</h3><ul>
-<li>減少不必要的資源請求</li>
-<li>合併多個小資源的請求</li>
-<li>只載入必要的資源 (使用 js tree shaking &amp; 移除未用的 css)</li>
-<li>最小化資源 (使用 server gzip &amp; 壓縮 js &#x2F; css)</li>
-<li>廣告 tracking 非網站主要運行邏輯，可延後載入，使用 defer &amp; async</li>
-<li>縮小 font 檔案</li>
-<li><code>&lt;script&gt;</code> 放在 <code>&lt;body&gt;</code> 下方，為了防止因阻塞而頁面 render 不全<ul>
-<li>async: 異步下載完後執行，HTML parsing 可能被阻塞，僅對外部資源有效<ul>
-<li>跟 DOM 無關的 js，可能先於 DOMContentLoaded 也可能後於 DOMContentLoaded</li>
-</ul>
+<li><p>用於社交網絡的屬性，FB 有使用到<br><code>&lt;meta property=&quot;og:xxx&quot;&gt;</code></p>
 </li>
-<li>defer: 先下載不馬上執行，等 HTML parsing 完後，才開始依序執行，僅對外部資源有效<ul>
-<li>依賴 DOM 的 js，先於 DOMContentLoaded</li>
-</ul>
+<li><p>App Links<br>IOS<br><code>&lt;meta property=&quot;al:ios:url&quot; content=&quot;applinks://docs&quot;&gt;</code><br><code>&lt;meta property=&quot;al:ios:app_store_id&quot; content=&quot;xxxx&quot;&gt;</code><br><code>&lt;meta property=&quot;al:ios:app_name&quot; content=&quot;App links&quot;&gt;</code></p>
 </li>
-</ul>
-</li>
-<li><code>&lt;link rel=&quot;prefetch | preload | dns-prefetch | preconnect | prerender&quot;&gt; </code><ul>
-<li>prefetch: 預先載入，但不先執行</li>
-<li>prerender: 預先載入，並執行</li>
-<li>preload: 優先載入的資源，通常為主要資源加載</li>
-<li>preconnect: 預先建立 tcp &#x2F; tls 連接</li>
-<li>dns-prefetch: 預先查詢 dns</li>
-</ul>
+<li><p>Android<br><code>&lt;meta property=&quot;al:android:url&quot; content=&quot;xx&quot;&gt;</code><br><code>&lt;meta property=&quot;al:android:app_name&quot; content=&quot;xxx&quot;&gt;</code><br><code>&lt;meta property=&quot;al:android:package&quot; content=&quot;xxx&quot;&gt;</code></p>
 </li>
 </ul>
 

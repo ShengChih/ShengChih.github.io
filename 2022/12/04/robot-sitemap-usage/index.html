@@ -12,11 +12,11 @@
   <meta charset="utf-8">
 
   
-  <title>DOM render</title>
+  <title>Robots.txt &amp; Sitemap</title>
   
-  <link rel="canonical" href="https://shengchih.github.io/2022/12/04/dom-render-process/">  
+  <link rel="canonical" href="https://shengchih.github.io/2022/12/04/robot-sitemap-usage/">  
   
-  <meta name="description" content="嗯，之前看到這篇文章，一直知識這塊大概只需要點擊收藏，大概就是高近視的老師閱券，嗯，學會了 XDDOM performanceWeb Performance OptimizationRendering Performance 一樣先來個肌肉訓練，進入正題好了，先說瀏覽器透過網址向 server 取得">
+  <meta name="description" content="這個東西一直在第二個工作有看過，但只是很含糊地知道，說它重要也不是到真的很重要，但 memo 一下 大概就是在告知像 Google 這種搜尋引擎的爬蟲機制，我的網站哪些頁面可以讓你爬取，哪些頁面不用，因此你就會在 robots.txt 檔案內寫一些 Allow &amp;#x2F; Disallow 的連結">
   
   
   <meta name="keywords" content="blog">
@@ -27,21 +27,21 @@
   
   <meta property="og:site_name" content="Palapalado blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="DOM render" />
+  <meta property="og:title" content="Robots.txt &amp; Sitemap" />
   
-  <meta property="og:description" content="嗯，之前看到這篇文章，一直知識這塊大概只需要點擊收藏，大概就是高近視的老師閱券，嗯，學會了 XDDOM performanceWeb Performance OptimizationRendering Performance 一樣先來個肌肉訓練，進入正題好了，先說瀏覽器透過網址向 server 取得">
+  <meta property="og:description" content="這個東西一直在第二個工作有看過，但只是很含糊地知道，說它重要也不是到真的很重要，但 memo 一下 大概就是在告知像 Google 這種搜尋引擎的爬蟲機制，我的網站哪些頁面可以讓你爬取，哪些頁面不用，因此你就會在 robots.txt 檔案內寫一些 Allow &amp;#x2F; Disallow 的連結">
   
-  <meta property="og:url" content="https://shengchih.github.io/2022/12/04/dom-render-process/" />
+  <meta property="og:url" content="https://shengchih.github.io/2022/12/04/robot-sitemap-usage/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DOM render">
+  <meta name="twitter:title" content="Robots.txt &amp; Sitemap">
   
-  <meta name="twitter:description" content="嗯，之前看到這篇文章，一直知識這塊大概只需要點擊收藏，大概就是高近視的老師閱券，嗯，學會了 XDDOM performanceWeb Performance OptimizationRendering Performance 一樣先來個肌肉訓練，進入正題好了，先說瀏覽器透過網址向 server 取得">
-  
-  
+  <meta name="twitter:description" content="這個東西一直在第二個工作有看過，但只是很含糊地知道，說它重要也不是到真的很重要，但 memo 一下 大概就是在告知像 Google 這種搜尋引擎的爬蟲機制，我的網站哪些頁面可以讓你爬取，哪些頁面不用，因此你就會在 robots.txt 檔案內寫一些 Allow &amp;#x2F; Disallow 的連結">
   
   
-  <meta name="twitter:url" content="https://shengchih.github.io/2022/12/04/dom-render-process/" />
+  
+  
+  <meta name="twitter:url" content="https://shengchih.github.io/2022/12/04/robot-sitemap-usage/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -200,73 +200,24 @@
 </div>
 
         <div class="trans">
-            <h2>DOM render</h2>
+            <h2>Robots.txt & Sitemap</h2>
 
-  <p>嗯，之前看到這篇文章，一直知識這塊大概只需要點擊收藏，大概就是高近視的老師閱券，嗯，學會了 XD<br><a target="_blank" rel="noopener" href="https://gist.github.com/ShengChih/e47961feace907b444bae558a6333974">DOM performance</a><br><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLAwxTw4SYaPmKmNX-INgcxQWf30KuWa_A">Web Performance Optimization</a><br><a target="_blank" rel="noopener" href="https://web.dev/rendering-performance/">Rendering Performance</a></p>
-<p>一樣先來個肌肉訓練，進入正題好了，先說瀏覽器透過網址向 server 取得 response 內容 (HTML)，並且開始建構 DOM tree 的流程。<br>有些還沒有看完，之後再回頭補完好了。</p>
-<h2 id="解析-HTML"><a href="#解析-HTML" class="headerlink" title="解析 HTML"></a>解析 HTML</h2><ul>
-<li>Browser 向 server 取得 html</li>
-<li>解析 HTML 成 tokens, 如 tagName, Attributes</li>
-<li>tokens 再轉成 nodes</li>
-<li>nodes 再轉成 DOM tree</li>
-<li>CSSOM 從 css rules 建構出來</li>
-</ul>
-<blockquote>
-<p>解析 HTML 過程裡，有一些渲染阻塞的問題，而在阻塞過程都以白屏顯示:<br>DOM tree 是逐步解析 HTML，且逐部增加的，不是一次性的加入<br>解析過程若遇到 <code>&lt;link&gt;</code> token，還是 <code>&lt;script&gt;</code> token，這都會阻塞 DOM tree 的建構<br>因為這些檔案，可能牽涉 DOM render 資訊，如 SPA，JS 可以 render DOM &#x2F; 調整 style<br>CSS 檔案則可以再產生出新的 CSSOM 節點<br>另外，CSSOM 無法被建構成一個完整的 tree，因為並非每一個 DOM 都有 styles 屬性，想靠 styles 建立出完整的 tree 是不可能的，因此它只能依賴著 DOM tree 去附加 styles 屬性</p>
-</blockquote>
-<h2 id="Render-tree-根據-CSSOM-及-DOM-tree-合併"><a href="#Render-tree-根據-CSSOM-及-DOM-tree-合併" class="headerlink" title="Render tree - 根據 CSSOM 及 DOM tree 合併"></a>Render tree - 根據 CSSOM 及 DOM tree 合併</h2><ul>
-<li>當所有 JS &#x2F; CSS 及 HTML 都已完成處理，CSSOM + DOM tree 會合併成一棵 Render tree<ul>
-<li>這包含了可視元件及其 styles 的運算</li>
-<li>不可視的元件會被 prune 掉，以節省資源，如 meta &#x2F; link &#x2F; head 這種 </li>
-<li>Reflow 階段會去計算所有可視節點的位置和大小</li>
-<li>決定多層頁面 layer (z-index &#x2F; fixed &#x2F; absolute )</li>
-</ul>
-</li>
-</ul>
-<h2 id="Paint"><a href="#Paint" class="headerlink" title="Paint"></a>Paint</h2><ul>
-<li>當 render tree 已經將所有 layout style (位置&#x2F;大小&#x2F;圖層)相關都已處理完畢，因此就只需要輸出到畫面</li>
-</ul>
-<blockquote>
-<p>JS 執行 &amp; 渲染 Paint 都在主執行緒執行，若互相搶取資源就會造成畫面卡頓。</p>
-</blockquote>
-<h2 id="效能改善的方案"><a href="#效能改善的方案" class="headerlink" title="效能改善的方案"></a>效能改善的方案</h2><h3 id="減少-repaints-amp-reflow-觸發次數"><a href="#減少-repaints-amp-reflow-觸發次數" class="headerlink" title="減少 repaints &amp; reflow 觸發次數"></a>減少 repaints &amp; reflow 觸發次數</h3><ul>
-<li>批量修改 styles</li>
-<li>批量新增 &#x2F; 修改 &#x2F; 刪除 DOM</li>
-<li>使用 visibility: hidden&#x2F;visible  取代 display: none</li>
-<li>使用 transform 取代  top &#x2F; left &#x2F; bottom &#x2F; right</li>
-<li>preload locally font file (字型會影響 layout 造成 reflow)</li>
-<li>image 可事先定義 layout 大小，不會載入圖片後造成 reflow</li>
-<li>建立圖層 z-index &#x2F; fixed &#x2F; absolute</li>
-<li>viewport 大小改變</li>
-<li>:hover, :before, :after</li>
-</ul>
-<h3 id="阻塞資源"><a href="#阻塞資源" class="headerlink" title="阻塞資源"></a>阻塞資源</h3><ul>
-<li>減少不必要的資源請求</li>
-<li>合併多個小資源的請求</li>
-<li>只載入必要的資源 (使用 js tree shaking &amp; 移除未用的 css)</li>
-<li>最小化資源 (使用 server gzip &amp; 壓縮 js &#x2F; css)</li>
-<li>廣告 tracking 非網站主要運行邏輯，可延後載入，使用 defer &amp; async</li>
-<li>縮小 font 檔案</li>
-<li><code>&lt;script&gt;</code> 放在 <code>&lt;body&gt;</code> 下方，為了防止因阻塞而頁面 render 不全<ul>
-<li>async: 異步下載完後執行，HTML parsing 可能被阻塞，僅對外部資源有效<ul>
-<li>跟 DOM 無關的 js，可能先於 DOMContentLoaded 也可能後於 DOMContentLoaded</li>
-</ul>
-</li>
-<li>defer: 先下載不馬上執行，等 HTML parsing 完後，才開始依序執行，僅對外部資源有效<ul>
-<li>依賴 DOM 的 js，先於 DOMContentLoaded</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>&lt;link rel=&quot;prefetch | preload | dns-prefetch | preconnect | prerender&quot;&gt; </code><ul>
-<li>prefetch: 預先載入，但不先執行</li>
-<li>prerender: 預先載入，並執行</li>
-<li>preload: 優先載入的資源，通常為主要資源加載</li>
-<li>preconnect: 預先建立 tcp &#x2F; tls 連接</li>
-<li>dns-prefetch: 預先查詢 dns</li>
-</ul>
-</li>
-</ul>
+  <p>這個東西一直在第二個工作有看過，但只是很含糊地知道，說它重要也不是到真的很重要，但 memo 一下</p>
+<p>大概就是在告知像 Google 這種搜尋引擎的爬蟲機制，我的網站哪些頁面可以讓你爬取，哪些頁面不用，因此你就會在 <code>robots.txt</code> 檔案內寫一些 Allow &#x2F; Disallow 的連結規則，然後允許哪些 User-Agent 爬蟲訪問，還有 Sitemap 連結。</p>
+<p><code>sitemap.xml</code> 是可以詳細到給爬蟲，爬取的優先權，連結帶入的參數有哪些之類的設定</p>
+<p>但即使這樣設定不允許的清單，爬蟲的機制可能還是會忽略全爬，那就必須要在 html <code>&lt;meta&gt;</code> 再加上一些條件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 該頁不處理</span><br><span class="line">&lt;meta name=&quot;robots&quot; content=&quot;NOINDEX&quot;&gt;</span><br><span class="line"></span><br><span class="line">// 該頁下的連結都不處理</span><br><span class="line">&lt;meta name=&quot;robots&quot; content=&quot;NOFLLOW&quot;&gt;</span><br><span class="line"></span><br><span class="line">// 該頁不用建立快取副本</span><br><span class="line">&lt;meta name=&quot;robots&quot; content=&quot;NOARCHIVE&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>這樣有幾個目的:</p>
+<ol>
+<li>讓爬蟲避開仍在測試的網頁</li>
+<li>不具內容資訊的網頁 (如有些金流交易的頁面，爬蟲訪問也會造成 server loading 變高，影響服務穩定性)</li>
+</ol>
+<p>robots.txt &#x2F; sitemap.xml 實作:</p>
+<ol>
+<li>公開的靜態檔案 (Nginx static folder &#x2F; S3)</li>
+<li>由 Server API 回應</li>
+</ol>
 
   <p> — 2022年12月4日</p>
   
