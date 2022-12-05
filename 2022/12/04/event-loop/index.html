@@ -12,11 +12,11 @@
   <meta charset="utf-8">
 
   
-  <title>All Posts - PalaPalado</title>
+  <title>Event loop 機制</title>
   
-  <link rel="canonical" href="https://shengchih.github.io/archives/">  
+  <link rel="canonical" href="https://shengchih.github.io/2022/12/04/event-loop/">  
   
-  <meta name="description" content="blog">
+  <meta name="description" content="同步程式都會在主執行緒執行，每次加入到 call stack 接著，異步程式則是執行完，將結果存放到 task queue 當 call stack 已經執行完且空，就會從 task queue 逐個處理，將其等待狀態清除並加入到主執行緒 重複上面的事件循環處理機制   123455 // L7 從">
   
   
   <meta name="keywords" content="blog">
@@ -24,28 +24,24 @@
   <meta name="author" content="PalaPalado">
   
   
-  <meta property="og:image" content="https://shengchih.github.io/images/thumbnail.jpg">
-  
   
   <meta property="og:site_name" content="Palapalado blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="All Posts - PalaPalado" />
+  <meta property="og:title" content="Event loop 機制" />
   
-  <meta property="og:description" content="blog">
+  <meta property="og:description" content="同步程式都會在主執行緒執行，每次加入到 call stack 接著，異步程式則是執行完，將結果存放到 task queue 當 call stack 已經執行完且空，就會從 task queue 逐個處理，將其等待狀態清除並加入到主執行緒 重複上面的事件循環處理機制   123455 // L7 從">
   
-  <meta property="og:url" content="https://shengchih.github.io/archives/" />
+  <meta property="og:url" content="https://shengchih.github.io/2022/12/04/event-loop/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="All Posts - PalaPalado">
+  <meta name="twitter:title" content="Event loop 機制">
   
-  <meta name="twitter:description" content="blog">
-  
-  
-  
-  <meta name="twitter:image" content="https://shengchih.github.io/images/thumbnail.jpg">
+  <meta name="twitter:description" content="同步程式都會在主執行緒執行，每次加入到 call stack 接著，異步程式則是執行完，將結果存放到 task queue 當 call stack 已經執行完且空，就會從 task queue 逐個處理，將其等待狀態清除並加入到主執行緒 重複上面的事件循環處理機制   123455 // L7 從">
   
   
-  <meta name="twitter:url" content="https://shengchih.github.io/archives/" />
+  
+  
+  <meta name="twitter:url" content="https://shengchih.github.io/2022/12/04/event-loop/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -204,186 +200,23 @@
 </div>
 
         <div class="trans">
-          
-<h2>All Posts</h2>
+            <h2>Event loop 機制</h2>
 
+  <p><img src="http://www.ruanyifeng.com/blogimg/asset/2014/bg2014100802.png"></p>
+<ol>
+<li>同步程式都會在主執行緒執行，每次加入到 call stack</li>
+<li>接著，異步程式則是執行完，將結果存放到 task queue</li>
+<li>當 call stack 已經執行完且空，就會從 task queue 逐個處理，將其等待狀態清除並加入到主執行緒</li>
+<li>重複上面的事件循環處理機制</li>
+</ol>
+<p><img src="/images/20221205/js-event-loop.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">5 // L7 從 call stack 同步程式印出</span><br><span class="line">3 // L5 p3 的執行最早產生結果，放入 task queue (1)</span><br><span class="line">4 // L8 setTimeout 放入 task queue (2)</span><br><span class="line">1 // L1 p1 結果放入 task queue(3)</span><br><span class="line">2 // L3 p2 結果放入 task queue(4)</span><br></pre></td></tr></table></figure>
 
-    <article>
-      <div class="row">
+<p>task queue(n) 只代表著被放入 queue 順序，不代表真實在 queue 的位置，畢竟主執行緒在執行 task queue 的任務時，可能還有其他異步尚未產生結果。</p>
+<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><p><a target="_blank" rel="noopener" href="https://medium.com/starbugs/%E9%9D%A2%E8%A9%A6-%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%E4%B8%80%E5%AE%9A%E8%A6%81%E6%9C%83%E7%9A%84-js-%E8%A7%80%E5%BF%B5%E9%A1%8C-%E4%B8%AD%E8%8B%B1%E5%B0%8D%E7%85%A7%E4%B9%8B%E4%B8%8A%E7%AF%87-3b0a3feda14f">[面試] 前端工程師一定要會的 JS 觀念題-中英對照之上篇</a><br><a target="_blank" rel="noopener" href="https://vimeo.com/96425312">Philip Roberts: Help, I’m stuck in an event-loop</a><br><a target="_blank" rel="noopener" href="http://latentflip.com/loupe/?code=dmFyIGEgPSAxOwpmdW5jdGlvbiBmbigpIHsKICBzZXRUaW1lb3V0KGZ1bmN0aW9uKCkgewogICAgYSA9IDI7CiAgfSwgMCk7Cn0KZnVuY3Rpb24gZm4yKCkgewogIHNldFRpbWVvdXQoZnVuY3Rpb24oKSB7CiAgICBhID0gMzsKICB9LCAwKTsKfQpmbigpOwpmbjIoKTsKY29uc29sZS5sb2coYSk7ICAvLyAx!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4=">Event loop 機制圖形化</a><br><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html"></a></p>
 
-        <div class="three columns left lit">
-          <p class="bottom">2022年12月4日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/12/04/robot-sitemap-usage/" class="">
-            
-              Robots.txt & Sitemap
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年12月4日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/12/04/seo-improvement/" class="">
-            
-              跟 SEO 可能相關的小事 ?
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年12月4日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/12/04/event-propagation/" class="">
-            
-              Event capturing & bubbling
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年12月4日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/12/04/event-loop/" class="">
-            
-              Event loop 機制
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年12月4日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/12/04/dom-render-process/" class="">
-            
-              DOM render
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年12月4日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/12/04/js-hosting/" class="">
-            
-              JS hosting
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年12月4日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/12/04/js-scope/" class="">
-            
-              Scope, First-class function, Closure
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年11月25日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/11/25/thef2e4th-week2/" class="">
-            
-              回顧 2022.11.14 - 2022.11.18 - 點點簽
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年11月24日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/11/24/thef2e4th-preweek/" class="">
-            
-              回顧 2022.11.01 - 2022.11.07 - Career 週記 (綜合三週的心得)
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年11月24日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/11/24/frontend-rwd/" class="">
-            
-              回顧2022.10.09 - 2022.10.15  Todo - 前端知識 (一)
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-<div class="pagination-bar">
-  <ul class="pagination">
-    
-    
-
-    <a class="" href="/archives/page/2/">
-      <span>Older</span>
-      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5A.5.5 0 0 0 4 8z" />
-      </svg>
-    </a>
-
-    
-  </ul>
-</div>
+  <p> — 2022年12月4日</p>
+  
 
 
         </div>
