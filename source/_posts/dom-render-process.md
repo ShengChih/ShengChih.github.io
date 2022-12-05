@@ -52,7 +52,19 @@ title: DOM render
 
 ### 阻塞資源
 - 減少不必要的資源請求
+- 合併多個小資源的請求
 - 只載入必要的資源 (使用 js tree shaking & 移除未用的 css)
 - 最小化資源 (使用 server gzip & 壓縮 js / css)
-- 廣告 tracking 非網站主要運行邏輯，可延後載入
+- 廣告 tracking 非網站主要運行邏輯，可延後載入，使用 defer & async
 - 縮小 font 檔案
+- `<script>` 放在 `<body>` 下方，為了防止因阻塞而頁面 render 不全
+    - async: 異步下載完後執行，HTML parsing 可能被阻塞，僅對外部資源有效
+        - 跟 DOM 無關的 js，可能先於 DOMContentLoaded 也可能後於 DOMContentLoaded
+    - defer: 先下載不馬上執行，等 HTML parsing 完後，才開始依序執行，僅對外部資源有效
+        - 依賴 DOM 的 js，先於 DOMContentLoaded
+- `<link rel="prefetch | preload | dns-prefetch | preconnect | prerender"> `
+    - prefetch: 預先載入，但不先執行
+    - prerender: 預先載入，並執行
+    - preload: 優先載入的資源，通常為主要資源加載
+    - preconnect: 預先建立 tcp / tls 連接
+    - dns-prefetch: 預先查詢 dns
