@@ -12,11 +12,11 @@
   <meta charset="utf-8">
 
   
-  <title>All Posts - PalaPalado</title>
+  <title>Event capturing &amp; bubbling</title>
   
-  <link rel="canonical" href="https://shengchih.github.io/archives/2022/12/">  
+  <link rel="canonical" href="https://shengchih.github.io/2022/12/04/event-propagation/">  
   
-  <meta name="description" content="blog">
+  <meta name="description" content="根據這篇文章 DOM 的事件傳遞機制：捕獲與冒泡，來個肌肉訓練精簡一下 example  在 HTML 裡，通常都會在 DOM 上綁定事件，那麼 DOM 是一個 tree，在頁面上觸發了一個事件，這個事件就會從根節點走訪到目的節點，一層一層由上往下傳遞。 就如上面那張圖，傳遞分為補獲 (1) &amp;am">
   
   
   <meta name="keywords" content="blog">
@@ -24,28 +24,24 @@
   <meta name="author" content="PalaPalado">
   
   
-  <meta property="og:image" content="https://shengchih.github.io/images/thumbnail.jpg">
-  
   
   <meta property="og:site_name" content="Palapalado blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="All Posts - PalaPalado" />
+  <meta property="og:title" content="Event capturing &amp; bubbling" />
   
-  <meta property="og:description" content="blog">
+  <meta property="og:description" content="根據這篇文章 DOM 的事件傳遞機制：捕獲與冒泡，來個肌肉訓練精簡一下 example  在 HTML 裡，通常都會在 DOM 上綁定事件，那麼 DOM 是一個 tree，在頁面上觸發了一個事件，這個事件就會從根節點走訪到目的節點，一層一層由上往下傳遞。 就如上面那張圖，傳遞分為補獲 (1) &amp;am">
   
-  <meta property="og:url" content="https://shengchih.github.io/archives/2022/12/" />
+  <meta property="og:url" content="https://shengchih.github.io/2022/12/04/event-propagation/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="All Posts - PalaPalado">
+  <meta name="twitter:title" content="Event capturing &amp; bubbling">
   
-  <meta name="twitter:description" content="blog">
-  
-  
-  
-  <meta name="twitter:image" content="https://shengchih.github.io/images/thumbnail.jpg">
+  <meta name="twitter:description" content="根據這篇文章 DOM 的事件傳遞機制：捕獲與冒泡，來個肌肉訓練精簡一下 example  在 HTML 裡，通常都會在 DOM 上綁定事件，那麼 DOM 是一個 tree，在頁面上觸發了一個事件，這個事件就會從根節點走訪到目的節點，一層一層由上往下傳遞。 就如上面那張圖，傳遞分為補獲 (1) &amp;am">
   
   
-  <meta name="twitter:url" content="https://shengchih.github.io/archives/2022/12/" />
+  
+  
+  <meta name="twitter:url" content="https://shengchih.github.io/2022/12/04/event-propagation/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -204,80 +200,20 @@
 </div>
 
         <div class="trans">
-          
-<h2>All Posts</h2>
+            <h2>Event capturing & bubbling</h2>
 
+  <p>根據這篇文章 <a target="_blank" rel="noopener" href="https://blog.huli.tw/2017/08/27/dom-event-capture-and-propagation/">DOM 的事件傳遞機制：捕獲與冒泡</a>，來個肌肉訓練精簡一下</p>
+<p><img src="/images/20221205/event-capaturing-bubbling.png"><br><a target="_blank" rel="noopener" href="https://codepen.io/shengchih/pen/vYrvYLo?editors=1011">example</a></p>
+<p><img src="https://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg"></p>
+<p>在 HTML 裡，通常都會在 DOM 上綁定事件，那麼 DOM 是一個 tree，在頁面上觸發了一個事件，這個事件就會從根節點走訪到目的節點，一層一層由上往下傳遞。</p>
+<p>就如上面那張圖，傳遞分為補獲 (1) &amp; 抵達目的節點 (2) &amp; 冒泡 (3)</p>
+<p>順序上就一定會先呼叫捕獲 listener 再呼叫冒泡 listener，唯一有個差異的是，在於抵達目的節點的事件，既不是冒泡還是捕獲，因此只在意 addEventListener 的綁定順序呼叫。</p>
+<p>如果要防止事件往下傳遞捕獲 or 往上傳遞冒泡，都可以透過 <code>e.stopPropagation()</code></p>
+<p>另外我自己以前也會搞混的 <code>e.preventDefault()</code> ，它是拿來防止 Native HTML 預設行為，如 <code>&lt;a&gt;</code> 點擊會觸發新網頁或導向網址的行為。</p>
+<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref."></a>Ref.</h2><p><a target="_blank" rel="noopener" href="https://blog.huli.tw/2017/08/27/dom-event-capture-and-propagation/">DOM 的事件傳遞機制：捕獲與冒泡</a></p>
 
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年12月4日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/12/04/event-propagation/" class="">
-            
-              Event capturing & bubbling
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年12月4日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/12/04/dom-render-process/" class="">
-            
-              DOM render
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年12月4日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/12/04/js-hosting/" class="">
-            
-              JS hosting
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">2022年12月4日</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/12/04/js-scope/" class="">
-            
-              Scope, First-class function, Closure
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-<div class="pagination-bar">
-  <ul class="pagination">
-    
-    
-  </ul>
-</div>
+  <p> — 2022年12月4日</p>
+  
 
 
         </div>
